@@ -39,7 +39,7 @@ public class CommonProductService implements ProductService {
 
     @Override
     public double getTotalPrice() {
-        return productRepository.getAll().stream().mapToDouble(x -> x.getPrice()).sum();
+        return productRepository.getAll().stream().mapToDouble(Product::getPrice).sum();
     }
 
     @Override
@@ -53,9 +53,6 @@ public class CommonProductService implements ProductService {
 
     @Override
     public void deleteByName(String name) {
-        Product productToDelete = getAll().stream().filter(x -> name.equals(x.getName())).findFirst().orElse(null);
-        if (productToDelete != null) {
-            deleteById(productToDelete.getId());
-        }
+        getAll().stream().filter(x -> name.equals(x.getName())).findFirst().ifPresent(productToDelete -> deleteById(productToDelete.getId()));
     }
 }

@@ -62,4 +62,82 @@ public class AspectLogging {
             throw new RuntimeException();
         }
     }
+
+    @Pointcut("execution(* de.telran.g10170123ebeshop.service.jpa.JpaProductService.getTotalPrice(..))")
+    public void getTotalPrice() {
+    }
+
+    @Around("getTotalPrice()")
+    public Object aroundGetTotalPrice(ProceedingJoinPoint joinPoint)  {
+        LOGGER.info("getTotalPrice @Around was called");
+        try {
+            Object result = joinPoint.proceed();
+            LOGGER.info("getTotalPrice @Around returned value: {}", result);
+            return result;
+        } catch (Throwable throwable) {
+            LOGGER.error("getTotalPrice threw Exception: {}", throwable.getMessage());
+            throw new RuntimeException();
+        }
+    }
+
+    @After("getTotalPrice()")
+    public void afterGetTotalPrice(JoinPoint joinPoint) {
+        LOGGER.info("getTotalPrice successfully returned total price");
+    }
+
+    @Pointcut("execution(* de.telran.g10170123ebeshop.service.jpa.JpaProductService.deleteByName(..))")
+    public void deleteByName() {
+
+    }
+
+    @Around("deleteByName()")
+    public Object aroundDeleteByName(ProceedingJoinPoint joinPoint)  {
+        LOGGER.info("deleteByName @Around was called");
+        try {
+            Object result = joinPoint.proceed();
+            LOGGER.info("deleteByName @Around deleted product: {}", result);
+            return result;
+        } catch (Throwable throwable) {
+            LOGGER.error("deleteByName threw Exception: {}", throwable.getMessage());
+            throw new RuntimeException();
+        }
+    }
+
+    @After("deleteByName()")
+    public void afterDeleteByName(JoinPoint joinPoint) {
+        LOGGER.info("deleteByName successfully deleted product, ID: {}", ((CommonProduct) joinPoint.getArgs()[0]).getId());
+    }
+
+    @Pointcut("execution(* de.telran.g10170123ebeshop.service.*(..))")
+    public void allMethods() {
+
+    }
+
+    @Around("allMethods()")
+    public Object aroundAllMethods(ProceedingJoinPoint joinPoint)  {
+        LOGGER.info("Class {} method {} @Around was called with parameters: {}",joinPoint.getClass(), joinPoint.getSignature().getName(), joinPoint.getArgs());
+        try {
+            Object result = joinPoint.proceed();
+            LOGGER.info("Class {} method {} @Around returned value: {}", joinPoint.getClass(),joinPoint.getSignature().getName(), result);
+            return result;
+        } catch (Throwable throwable) {
+            LOGGER.error("Class {} method {} threw Exception: {}",joinPoint.getClass(), joinPoint.getSignature().getName(), throwable.getMessage());
+            throw new RuntimeException();
+        }
+    }
+
+    @After("allMethods()")
+    public void afterAllMethods(JoinPoint joinPoint) {
+        LOGGER.info("Class {} method {} successfully worked", joinPoint.getClass(), joinPoint.getSignature().getName());
+    }
+
+    @AfterReturning("allMethods()")
+    public void afterReturningAllMethods(JoinPoint joinPoint) {
+        LOGGER.info("Class {} method {} successfully returned value {}", joinPoint.getClass(), joinPoint.getSignature().getName(), joinPoint.getArgs()[0]);
+    }
+
+    @AfterThrowing("allMethods()")
+    public void afterThrowingAllMethods(JoinPoint joinPoint) {
+        LOGGER.error("Class {} method {} threw Exception {}", joinPoint.getClass(), joinPoint.getSignature().getName(), joinPoint.getArgs()[0]);
+    }
 }

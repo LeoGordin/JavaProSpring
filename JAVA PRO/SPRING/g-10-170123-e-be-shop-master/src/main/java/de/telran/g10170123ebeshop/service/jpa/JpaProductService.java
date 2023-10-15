@@ -78,6 +78,7 @@ public class JpaProductService implements ProductService {
 
     @Override
     public void deleteByName(String name) {
-        repository.deleteByName(name);
+        getAll().stream().filter(x -> name.equals(x.getName())).findFirst().ifPresent(productToDelete -> deleteById(productToDelete.getId()));
     }
+
 }

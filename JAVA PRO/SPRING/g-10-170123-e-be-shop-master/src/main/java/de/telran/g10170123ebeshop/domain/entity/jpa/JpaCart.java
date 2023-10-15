@@ -8,6 +8,10 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Применить логирование в энтити-классах, залогировать вызов конструкторов, методов (без применения АОП).
+ */
+
 @Entity
 @Table(name = "cart")
 public class JpaCart implements Cart {
