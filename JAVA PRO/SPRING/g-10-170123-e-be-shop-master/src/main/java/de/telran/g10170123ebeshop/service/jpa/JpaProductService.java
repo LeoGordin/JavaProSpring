@@ -24,12 +24,12 @@ public class JpaProductService implements ProductService {
     @Autowired
     private JpaProductRepository repository;
 
+    @Autowired
     private TaskRepository taskRepository;
 
     @Override
     public List<Product> getAll() {
-
-        Task task = new Task("task scheduled after getting all products");
+        Task task = new Task("Task scheduled after getting all products");
         taskRepository.save(task);
         ScheduleExecutor.executeTask(task);
         return new ArrayList<>(repository.findAll());
@@ -37,14 +37,13 @@ public class JpaProductService implements ProductService {
 
     @Override
     public Product getById(int id) {
+//        LOGGER.log(Level.INFO, String.format("Вызван метод getById с параметром %d.", id));
+//        LOGGER.log(Level.WARN, String.format("Вызван метод getById с параметром %d.", id));
+//        LOGGER.log(Level.ERROR, String.format("Вызван метод getById с параметром %d.", id));
 
-//        LOGGER.log(Level.INFO, String.format("Getting product by id: %d", id));
-//        LOGGER.log(Level.WARN, String.format("Getting product by id: %d", id));
-//        LOGGER.log(Level.ERROR, String.format("Getting product by id: %d", id));
-
-        LOGGER.info(String.format("Getting product by id: %d", id));
-        LOGGER.warn(String.format("Getting product by id: %d", id));
-        LOGGER.error(String.format("Getting product by id: %d", id));
+        LOGGER.info(String.format("Вызван метод getById с параметром %d.", id));
+        LOGGER.warn(String.format("Вызван метод getById с параметром %d.", id));
+        LOGGER.error(String.format("Вызван метод getById с параметром %d.", id));
 
         return repository.findById(id).orElse(null);
     }
@@ -52,13 +51,12 @@ public class JpaProductService implements ProductService {
     @Override
     public void addProduct(Product product) {
         product = repository.save(new JpaProduct(0, product.getName(), product.getPrice()));
-
     }
 
     @Override
     public void deleteById(int id) {
         if (id < 1) {
-            throw new IllegalArgumentException("Id cannot be less than 1");
+            throw new IllegalArgumentException("ID не может быть меньше 1");
         }
         repository.deleteById(id);
     }
