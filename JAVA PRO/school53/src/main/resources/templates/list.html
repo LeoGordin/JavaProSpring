@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <div th:replace="fragments/header"/>
+
+    <h1 th:text="${time}">Header</h1>
+
+    <h2 th:text="${students[2].last + ' ' + students[2].first}">last</h2>
+
+    <br/>
+    <span th:if="${#lists.size(students)} > 3" th:text="BIG"/>
+    <span th:if="${#lists.size(students)} <= 3" th:text="SMALL"/>
+
+    <br/>
+    <div th:switch="${#lists.size(students)} > 3">
+        <p th:case="true">Group is big</p>
+        <p th:case="false">Group is small</p>
+        <p th:case="*">Group is something other</p>
+    </div>
+
+    <ul>
+        <li th:each="student: ${students}" th:text="|Full name is ${student.first} ${student.last}|">Student</li>
+    </ul>
+
+    <h3 th:text="|${teacher.id},${teacher.name},${teacher.working}">Teacher</h3>
+
+    <br/>
+    teacher is: [[(${teacher.working}) ? ('Active') : ('Inactive')]]
+    <br/>
+
+    <span th:each="student: ${students}">
+        <span th:text="${student.last}"/>
+        <a th:href="@{/student/{id}(id=${student.id})}" th:text="${'Student #' + student.id}">Student</a>
+        <a th:href="@{/student/delete/{id}(id=${student.id})}" th:text="${'Delete Student #' + student.id}">Student</a>
+        <br/>
+    </span>
+
+
+
+    <div th:replace="fragments/footer"/>
+</html>

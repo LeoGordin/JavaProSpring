@@ -1,0 +1,17 @@
+<!--
+DELETE http://loclhost:8080/coffee/{id}
+-->
+<script type="text/javascript">
+    function test()
+    {
+        var url = "/coffee/" + document.getElementById("id").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", url, true);
+        xhr.send(null);
+    }
+</script>
+<p>Delete v1</p>
+<form name="delete">
+    <input type="text" id="id" name="id"/>
+</form>
+<button type="button" onclick="test();">Delete</button>
