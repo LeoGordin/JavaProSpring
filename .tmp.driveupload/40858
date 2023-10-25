@@ -1,0 +1,6 @@
+package de.telran.g_10_170123_e_be_security.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository implements JpaRepository<User, Integer> {
+}

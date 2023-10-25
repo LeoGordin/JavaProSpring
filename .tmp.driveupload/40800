@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4fdbaf2b-7e98-465c-90f7-4d4a7d4cd46c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/telran/g_10_170123_e_be_security/domain/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/telran/g_10_170123_e_be_security/domain/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/telran/g_10_170123_e_be_security/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/13918" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40466" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40534" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40536" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40538" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40540" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40542" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40544" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40546" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40548" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40550" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40552" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40554" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40556" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.tmp.driveupload/40558" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prof53" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prof53" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2WtvoDhgi8UoXaXJzULngHwPw4h" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/levgordin/Tel_Ran/JAVA PRO/SPRING/g_10_170123_e_be_security"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4fdbaf2b-7e98-465c-90f7-4d4a7d4cd46c" name="Changes" comment="" />
+      <created>1697564865314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697564865314</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
